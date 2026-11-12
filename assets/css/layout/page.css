@@ -30,4 +30,4 @@
   font-weight: 700;
   line-height: 1;
 }
-.not-found p { color: var(--muted); }
+.not-found p:not(.grad) { color: var(--muted); }
