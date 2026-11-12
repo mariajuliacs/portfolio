@@ -1,0 +1,93 @@
+/* Tech stack: tab sidebar + panels. */
+.tech-layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  align-items: start;
+  gap: 40px;
+}
+
+.tech-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-right: 24px;
+  border-right: 1px solid var(--border);
+}
+
+.tech-tab {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  padding: 14px 18px;
+  border: none;
+  border-radius: 12px;
+  background: transparent;
+  color: var(--muted);
+  font-size: 15px;
+  font-weight: 500;
+  text-align: left;
+  cursor: pointer;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+.tech-tab:hover { background: rgba(167, 102, 255, 0.06); color: var(--text); }
+.tech-tab[aria-selected="true"] {
+  background: var(--grad);
+  color: #fff;
+  box-shadow: 0 10px 26px -14px rgba(167, 102, 255, 0.7);
+}
+.tech-tab-num {
+  color: var(--muted-2);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  transition: color 0.2s ease;
+}
+.tech-tab[aria-selected="true"] .tech-tab-num { color: rgba(255, 255, 255, 0.75); }
+
+.tech-content { min-height: 300px; }
+.tech-panel { animation: tech-fade 0.3s ease; }
+.tech-panel[hidden] { display: none; }
+@keyframes tech-fade {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: none; }
+}
+
+.tech-panel-title {
+  margin: 0 0 24px;
+  font-size: clamp(28px, 4vw, 38px);
+  font-weight: 600;
+  letter-spacing: -0.5px;
+}
+
+.tech-items { display: flex; flex-wrap: wrap; gap: 10px; }
+.tech-item {
+  display: inline-flex;
+  align-items: center;
+  padding: 11px 16px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+.tech-item:hover {
+  border-color: var(--border-strong);
+  background: var(--surface-2);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 960px) {
+  .tech-layout { grid-template-columns: 1fr; gap: 24px; }
+  .tech-sidebar {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 0 0 18px;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+  .tech-tab { width: auto; padding: 10px 14px; font-size: 14px; }
+}

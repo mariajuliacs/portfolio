@@ -1,0 +1,53 @@
+/* Professional experience timeline. */
+.timeline { position: relative; padding-left: 26px; }
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  bottom: 8px;
+  left: 6px;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--accent), transparent);
+  opacity: 0.6;
+}
+
+.timeline-item { position: relative; margin-bottom: 22px; }
+.timeline-dot {
+  position: absolute;
+  top: 22px;
+  left: -26px;
+  width: 12px;
+  height: 12px;
+  border: 3px solid var(--bg);
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.timeline-card {
+  padding: 22px 24px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+.timeline-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+.timeline-role { margin: 0; font-size: 19px; font-weight: 600; }
+.timeline-company {
+  margin: 4px 0 0;
+  color: var(--accent-2);
+  font-family: var(--font-mono);
+  font-size: 14px;
+}
+.timeline-meta { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; }
+.timeline-date { color: var(--muted); font-family: var(--font-mono); font-size: 13px; }
+.timeline-desc { margin: 0 0 12px; color: var(--muted-2); font-size: 13px; font-style: italic; }
+
+@media (max-width: 600px) {
+  .timeline-meta { flex-direction: row; align-items: center; }
+}

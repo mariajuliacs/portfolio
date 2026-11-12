@@ -1,0 +1,42 @@
+/* About section. */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  align-items: start;
+  gap: 48px;
+}
+.about-text p { margin: 0 0 14px; color: var(--muted); font-size: 15px; }
+
+.about-facts { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+.fact {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 12px;
+}
+.fact svg { width: 13px; height: 13px; }
+
+.about-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.about-card {
+  padding: 18px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+.about-card:hover { transform: translateY(-2px); border-color: var(--border-strong); }
+.about-card h3 { margin: 0 0 6px; font-size: 15px; }
+.about-card p { margin: 0; color: var(--muted); font-size: 13px; }
+
+@media (max-width: 960px) {
+  .about-grid { grid-template-columns: 1fr; gap: 36px; }
+}
+@media (max-width: 600px) {
+  .about-cards { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,114 @@
+/* Project cards and the featured (highlight) card. */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+.projects-grid-page { margin-bottom: 48px; }
+
+.project-card {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 22px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+.project-card:hover { transform: translateY(-3px); border-color: var(--border-strong); }
+.project-card-wide { grid-column: span 2; }
+
+.project-tag {
+  align-self: flex-start;
+  margin: 0;
+  padding: 4px 10px;
+  border: 1px solid rgba(217, 70, 239, 0.25);
+  border-radius: 8px;
+  background: rgba(217, 70, 239, 0.15);
+  color: #f0abfc;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.project-title { margin: 4px 0 0; font-size: 19px; font-weight: 600; }
+.project-desc { margin: 0; color: var(--muted); font-size: 14px; }
+
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: auto;
+  color: var(--accent-2);
+  font-family: var(--font-mono);
+  font-size: 13px;
+}
+.project-link:hover { color: #fff; }
+.project-link.is-unavailable { color: var(--muted-2); font-style: italic; }
+
+/* Featured card */
+.project-card-highlight {
+  gap: 14px;
+  padding: 26px;
+  border: none;
+  background: linear-gradient(160deg, #a366ff 0%, #6d28d9 100%);
+  color: #fff;
+}
+.highlight-tag {
+  align-self: flex-start;
+  margin: 0;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.18);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+.highlight-title { margin: 0; font-size: 18px; font-weight: 600; }
+.metric-row { display: flex; flex-direction: column; gap: 2px; }
+.metric-value {
+  font-size: 42px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -1.5px;
+}
+.metric-label {
+  color: rgba(255, 255, 255, 0.8);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.4px;
+}
+.metric-divider { height: 1px; margin: 2px 0; background: rgba(255, 255, 255, 0.2); }
+
+/* Bullet list used inside cards and the timeline */
+.bullets { display: grid; gap: 6px; }
+.bullets li {
+  position: relative;
+  padding-left: 16px;
+  color: var(--muted);
+  font-size: 14px;
+}
+.bullets li::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent-2);
+}
+
+@media (max-width: 960px) {
+  .projects-grid { grid-template-columns: 1fr 1fr; }
+  .project-card-highlight { grid-column: span 2; }
+}
+@media (max-width: 600px) {
+  .projects-grid { grid-template-columns: 1fr; }
+  .project-card-wide,
+  .project-card-highlight { grid-column: span 1; }
+}

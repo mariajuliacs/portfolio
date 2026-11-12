@@ -1,0 +1,28 @@
+/* Design tokens: colors, gradients, radii and layout sizes. */
+:root {
+  --bg: #0a0613;
+  --bg-2: #0f0820;
+  --surface: rgba(28, 18, 54, 0.55);
+  --surface-2: rgba(38, 22, 70, 0.7);
+  --border: rgba(149, 109, 255, 0.18);
+  --border-strong: rgba(167, 130, 255, 0.35);
+
+  --text: #ece6ff;
+  --muted: #a59cc4;
+  --muted-2: #847b9f;
+
+  --accent: #a366ff;
+  --accent-2: #c084ff;
+  --success: #4ade80;
+
+  --grad: linear-gradient(135deg, #c084ff 0%, #a366ff 50%, #6d28d9 100%);
+
+  --font-sans: "Sora", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "Cascadia Code", monospace;
+
+  --radius: 18px;
+  --radius-sm: 12px;
+  --max: 1180px;
+  --gutter: 24px;
+  --header-h: 68px;
+}

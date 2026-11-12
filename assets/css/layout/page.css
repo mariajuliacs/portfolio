@@ -1,0 +1,33 @@
+/* Secondary pages (projects, education) and the 404 page. */
+.section-page { padding-top: 60px; }
+
+.page-lead {
+  max-width: 620px;
+  margin: -28px 0 40px;
+  color: var(--muted);
+  font-size: 17px;
+}
+
+.group-title {
+  margin: 40px 0 16px;
+  color: var(--accent-2);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.not-found {
+  display: grid;
+  place-items: center;
+  min-height: 70vh;
+  text-align: center;
+}
+.not-found-code {
+  margin: 0;
+  font-size: clamp(80px, 18vw, 160px);
+  font-weight: 700;
+  line-height: 1;
+}
+.not-found p { color: var(--muted); }

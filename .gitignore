@@ -1,0 +1,16 @@
+# OS / Google Drive
+.DS_Store
+Thumbs.db
+desktop.ini
+*.gdoc
+*.gsheet
+.tmp.driveupload/
+
+# Editors
+.vscode/
+.idea/
+*.swp
+
+# Local notes
+notes/
+*.local.md
